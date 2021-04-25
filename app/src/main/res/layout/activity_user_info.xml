@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C6C2C2"
+    tools:context=".view.UserInfoActivity">
+
+    <TextView
+        android:id="@+id/userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="User Personal Information" />
+
+    <EditText
+        android:id="@+id/editTextNameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/editTextEmailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textWebEmailAddress"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/editTextHobbiesId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Hobbies" />
+
+
+    <TextView
+        android:id="@+id/genderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingStart="5dp"
+        android:text="Gender"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+
+    <Spinner
+        android:id="@+id/editGenderId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+         />
+
+
+
+
+    <EditText
+        android:id="@+id/editTextAgeId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Age" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/showButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10dp"
+            android:text="Show CV"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/nextButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:text="Next"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</LinearLayout>

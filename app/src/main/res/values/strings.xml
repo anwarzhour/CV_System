@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CV_App</string>
+    <string-array name="gender">
+        <item>female</item>
+        <item>male</item>
+    </string-array>
+
+
+    <string-array name="language">
+        <item>arabic</item>
+        <item>english</item>
+
+    </string-array>
+</resources>

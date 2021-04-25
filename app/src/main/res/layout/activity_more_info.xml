@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C6C2C2"
+    tools:context=".view.MoreInfoActivity">
+
+
+    <TextView
+        android:id="@+id/userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="More Details" />
+
+    <EditText
+        android:id="@+id/editTextWorkId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Work" />
+
+
+    <EditText
+        android:id="@+id/editTextEductionId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Eduction" />
+
+    <EditText
+        android:id="@+id/editTextQualificationsId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:hint="Qualifications" />
+
+
+    <TextView
+        android:id="@+id/languageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingStart="5dp"
+        android:text="Language"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <Spinner
+        android:id="@+id/editLanguageId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+
+
+    <Button
+        android:id="@+id/saveButtonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:text="Save"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
