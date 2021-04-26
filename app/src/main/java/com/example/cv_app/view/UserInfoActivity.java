@@ -20,7 +20,7 @@ import com.example.cv_app.model.User;
 
 public class UserInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private Button nextButton, showButton;
+    private Button nextButton;
     private EditText mName, mEmail, mHobbies, mAge;
     private Spinner mGender;
 
@@ -30,7 +30,6 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
         setContentView(R.layout.activity_user_info);
 
         nextButton = findViewById(R.id.nextButtonId);
-        showButton = findViewById(R.id.showButtonId);
         mName = findViewById(R.id.editTextNameId);
         mEmail = findViewById(R.id.editTextEmailId);
         mHobbies = findViewById(R.id.editTextHobbiesId);
@@ -41,15 +40,6 @@ public class UserInfoActivity extends AppCompatActivity implements AdapterView.O
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mGender.setAdapter(adapter);
         mGender.setOnItemSelectedListener(this);
-
-        showButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserInfoActivity.this, ShowInfoActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 

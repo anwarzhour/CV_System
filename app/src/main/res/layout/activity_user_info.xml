@@ -84,15 +84,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/showButtonId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_margin="10dp"
-            android:text="Show CV"
-            android:textAllCaps="false" />
-
-        <Button
             android:id="@+id/nextButtonId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
