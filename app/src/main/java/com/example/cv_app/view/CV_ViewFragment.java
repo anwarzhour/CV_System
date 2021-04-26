@@ -27,8 +27,9 @@ public class CV_ViewFragment extends Fragment {
     private static final String KEY_EDUCATION = "education";
     private static final String KEY_QUALIFICATIONS="qualifications" ;
     private static final String KEY_LANGUAGE = "language";
+    private static final String KEY_DRIVE ="drive";
 
-    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage;
+    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage, mDriveLicense;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +46,7 @@ public class CV_ViewFragment extends Fragment {
         mEduction = view.findViewById(R.id.viewTextEductionId);
         mQualifications = view.findViewById(R.id.viewTextQualificationsId);
         mLanguage = view.findViewById(R.id.viewTextLanguageId);
+        mDriveLicense = view.findViewById(R.id.viewTextDriveId);
 
         sharedPreferences = getActivity().getSharedPreferences(Shared_PREF_NAME,getActivity().MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);
@@ -56,8 +58,10 @@ public class CV_ViewFragment extends Fragment {
         String education = sharedPreferences.getString(KEY_EDUCATION,null);
         String qualifications = sharedPreferences.getString(KEY_QUALIFICATIONS, null);
         String language = sharedPreferences.getString(KEY_LANGUAGE,null);
+        String drive = sharedPreferences.getString(KEY_DRIVE,null);
 
-        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language);
+
+        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language,drive);
 
 
 
@@ -71,6 +75,7 @@ public class CV_ViewFragment extends Fragment {
             mEduction.setText(user.getEduction());
             mQualifications.setText(user.getQualifications());
             mLanguage.setText(user.getLanguage());
+            mDriveLicense.setText(user.getDriveLicense());
         }
 
         return view;

@@ -28,8 +28,9 @@ public class ShowInfoActivity extends AppCompatActivity {
     private static final String KEY_EDUCATION = "education";
     private static final String KEY_QUALIFICATIONS="qualifications" ;
     private static final String KEY_LANGUAGE = "language";
+    private static final String KEY_DRIVE ="drive";
 
-    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage;
+    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage, mDriveLicense;
     private Button done;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class ShowInfoActivity extends AppCompatActivity {
         mQualifications = findViewById(R.id.viewTextQualificationsId);
         mLanguage = findViewById(R.id.viewTextLanguageId);
         done = findViewById(R.id.doneButton);
+        mDriveLicense = findViewById(R.id.viewTextDriveId);
 
 
 
@@ -59,13 +61,14 @@ public class ShowInfoActivity extends AppCompatActivity {
         String education = sharedPreferences.getString(KEY_EDUCATION,null);
         String qualifications = sharedPreferences.getString(KEY_QUALIFICATIONS, null);
         String language = sharedPreferences.getString(KEY_LANGUAGE,null);
+        String drive = sharedPreferences.getString(KEY_DRIVE,null);
 
 
-        Gson gson = new Gson();
+       // Gson gson = new Gson();
 
-        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language);
+        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language,drive);
 
-        String json = gson.toJson(user);
+       // String json = gson.toJson(user);
 
 
         if(name != null || email != null){
@@ -78,6 +81,8 @@ public class ShowInfoActivity extends AppCompatActivity {
             mEduction.setText(user.getEduction());
             mQualifications.setText(user.getQualifications());
             mLanguage.setText(user.getLanguage());
+            mDriveLicense.setText(user.getDriveLicense());
+
         }
 
 

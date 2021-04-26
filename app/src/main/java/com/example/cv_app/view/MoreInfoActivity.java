@@ -30,6 +30,7 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
     private static final String KEY_HOBBIES = "hobbies";
     private static final String KEY_GENDER = "gender";
     private static final String KEY_AGE = "age";
+    private static final String KEY_DRIVE ="drive";
     private static final String KEY_WORK="work" ;
     private static final String KEY_EDUCATION = "education";
     private static final String KEY_QUALIFICATIONS="qualifications" ;
@@ -71,13 +72,13 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         String selectLanguage = parent.getItemAtPosition(position).toString();
-
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("name");
         String email = bundle.getString("email");
         String hobbies = bundle.getString("hobbies");
         String gender = bundle.getString("gender");
         String age = bundle.getString("age");
+        String drive = bundle.getString("drive");
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +88,7 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
                 editor.putString(KEY_HOBBIES, hobbies);
                 editor.putString(KEY_GENDER, gender);
                 editor.putString(KEY_AGE, age);
+                editor.putString(KEY_DRIVE,drive);
                 editor.putString(KEY_WORK, mWork.getText().toString());
                 editor.putString(KEY_EDUCATION, mEducation.getText().toString());
                 editor.putString(KEY_QUALIFICATIONS, mQualifications.getText().toString());

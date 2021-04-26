@@ -10,6 +10,7 @@ public class User {
     private String eduction;
     private String qualifications;
     private String language;
+    private String driveLicense;
 
     public User(String name, String email, String hobbies, String gender, String age) {
         this.name = name;
@@ -20,6 +21,15 @@ public class User {
     }
 
 
+    public User(String name, String email, String hobbies, String gender, String age, String driveLicense) {
+        this.name = name;
+        this.email = email;
+        this.hobbies = hobbies;
+        this.gender = gender;
+        this.age = age;
+        this.driveLicense = driveLicense;
+    }
+
     public User(String work, String eduction, String qualifications, String language) {
         this.work = work;
         this.eduction = eduction;
@@ -27,7 +37,7 @@ public class User {
         this.language = language;
     }
 
-    public User(String name, String email, String hobbies, String gender, String age, String work, String eduction, String qualifications, String language) {
+    public User(String name, String email, String hobbies, String gender, String age, String work, String eduction, String qualifications, String language, String driveLicense) {
         this.name = name;
         this.email = email;
         this.hobbies = hobbies;
@@ -37,7 +47,18 @@ public class User {
         this.eduction = eduction;
         this.qualifications = qualifications;
         this.language = language;
+        this.driveLicense = driveLicense;
     }
+
+    public String getDriveLicense() {
+        return driveLicense;
+    }
+
+    public void setDriveLicense(String driveLicense) {
+        this.driveLicense = driveLicense;
+    }
+
+
 
     public User() {
     }
