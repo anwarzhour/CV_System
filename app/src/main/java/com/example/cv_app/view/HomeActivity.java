@@ -1,13 +1,10 @@
 package com.example.cv_app.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.cv_app.CV_ViewFragment;
-import com.example.cv_app.HomeFragment;
 import com.example.cv_app.R;
 import com.example.cv_app.controller.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
