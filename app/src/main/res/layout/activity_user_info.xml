@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:paddingStart="5dp"
-        android:text="Gender"
+        android:text="Age"
         android:textStyle="bold"
         android:textSize="18dp" />
 

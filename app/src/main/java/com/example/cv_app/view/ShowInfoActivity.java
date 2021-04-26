@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +29,8 @@ public class ShowInfoActivity extends AppCompatActivity {
     private static final String KEY_QUALIFICATIONS="qualifications" ;
     private static final String KEY_LANGUAGE = "language";
 
-
     private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage;
+    private Button done;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class ShowInfoActivity extends AppCompatActivity {
         mEduction = findViewById(R.id.viewTextEductionId);
         mQualifications = findViewById(R.id.viewTextQualificationsId);
         mLanguage = findViewById(R.id.viewTextLanguageId);
-
+        done = findViewById(R.id.doneButton);
 
 
 
@@ -80,10 +82,16 @@ public class ShowInfoActivity extends AppCompatActivity {
 
 
 
-       /* mName.setText(user.getName());
-        mEmail.setText(user.getEmail());
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowInfoActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-        */
+
 
 
     }

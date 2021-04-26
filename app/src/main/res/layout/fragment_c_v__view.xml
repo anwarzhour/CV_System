@@ -13,8 +13,8 @@
         android:gravity="center"
         android:textSize="18dp"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:text="User Information" />
+
+        android:text="CV" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,6 +25,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+
+            <TextView
+                android:id="@+id/personalInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="#3E3D3D"
+                android:layout_margin="20dp"
+                android:text="Personal Info" />
 
             <TextView
                 android:id="@+id/nameTitle"
@@ -64,29 +76,6 @@
                 android:paddingStart="10dp"
                 android:text=""
                 android:textSize="16dp" />
-
-
-
-            <TextView
-                android:id="@+id/hobbiesTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:paddingStart="10dp"
-                android:text="Hobbies"
-                android:textStyle="bold"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/viewTextHobbiesId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:paddingStart="10dp"
-                android:text=""
-                android:textSize="16dp" />
-
-
 
 
             <TextView
@@ -131,6 +120,17 @@
 
 
             <TextView
+                android:id="@+id/workInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="#3E3D3D"
+                android:layout_margin="20dp"
+                android:text="Work and Eduction" />
+
+            <TextView
                 android:id="@+id/workTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,6 +172,37 @@
 
 
             <TextView
+                android:id="@+id/skillsInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:textColor="@color/white"
+                android:background="#3E3D3D"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:text="Skills" />
+
+            <TextView
+                android:id="@+id/hobbiesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingStart="10dp"
+                android:text="Hobbies"
+                android:textStyle="bold"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/viewTextHobbiesId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="16dp" />
+
+
+            <TextView
                 android:id="@+id/qualificationsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,17 +221,16 @@
                 android:text=""
                 android:textSize="16dp" />
 
-
-
             <TextView
-                android:id="@+id/languageTitle"
+                android:id="@+id/languageInfo"
+                android:textColor="@color/white"
+                android:background="#3E3D3D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:paddingStart="10dp"
-                android:text="Language"
+                android:textSize="22dp"
                 android:textStyle="bold"
-                android:textSize="18dp" />
+                android:layout_margin="20dp"
+                android:text="Language" />
 
             <TextView
                 android:id="@+id/viewTextLanguageId"
@@ -211,12 +241,6 @@
                 android:layout_marginBottom="30dp"
                 android:text=""
                 android:textSize="16dp" />
-
-
-
-
-
-
 
         </LinearLayout>
     </ScrollView>
