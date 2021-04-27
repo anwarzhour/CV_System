@@ -25,7 +25,7 @@ public class MoreInfoActivity extends AppCompatActivity {
     private EditText mWork, mEducation, mQualifications;
     private Spinner mLanguage, sEducation;
 
-
+    //use it to store data as a local
     private SharedPreferences sharedPreferences;
     private static final String Shared_PREF_NAME="mypref";
     private static final String KEY_NAME="name" ;
@@ -62,7 +62,7 @@ public class MoreInfoActivity extends AppCompatActivity {
         sEducation = findViewById(R.id.spinnerEductionId);
         save = findViewById(R.id.saveButtonId);
 
-
+        //save local data
         sharedPreferences = getSharedPreferences(Shared_PREF_NAME,MODE_PRIVATE);
 
         languageList = new ArrayList<>();
@@ -133,6 +133,7 @@ public class MoreInfoActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //insert data as a local
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_NAME, name);
                 editor.putString(KEY_EMAIL, email);

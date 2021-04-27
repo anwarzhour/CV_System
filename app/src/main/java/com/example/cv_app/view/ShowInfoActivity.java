@@ -50,7 +50,7 @@ public class ShowInfoActivity extends AppCompatActivity {
         mDriveLicense = findViewById(R.id.viewTextDriveId);
 
 
-
+        //call sharedPreferences to get or show user data
         sharedPreferences = getSharedPreferences(Shared_PREF_NAME,MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);
         String email = sharedPreferences.getString(KEY_EMAIL,null);
@@ -63,7 +63,7 @@ public class ShowInfoActivity extends AppCompatActivity {
         String language = sharedPreferences.getString(KEY_LANGUAGE,null);
         String drive = sharedPreferences.getString(KEY_DRIVE,null);
 
-
+        //todo:
        // Gson gson = new Gson();
 
         User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language,drive);

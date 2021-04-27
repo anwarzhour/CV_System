@@ -167,6 +167,7 @@ public class UserInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserInfoActivity.this, MoreInfoActivity.class);
+                //use it to send data to next activity
                 intent.putExtra("name", mName.getText().toString());
                 intent.putExtra("email",mEmail.getText().toString());
                 intent.putExtra("hobbies", user.getHobbies());

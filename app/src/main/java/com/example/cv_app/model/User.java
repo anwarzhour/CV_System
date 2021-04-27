@@ -1,5 +1,5 @@
 package com.example.cv_app.model;
-
+//model
 public class User {
     private String name;
     private String email;
@@ -12,7 +12,13 @@ public class User {
     private String language;
     private String driveLicense;
     private String eductionType;
+    // constructor
+    public User() {
+    }
 
+
+
+    // constructor
     public User(String name, String email, String hobbies, String gender, String age) {
         this.name = name;
         this.email = email;
@@ -21,7 +27,7 @@ public class User {
         this.age = age;
     }
 
-
+    // constructor
     public User(String name, String email, String hobbies, String gender, String age, String driveLicense) {
         this.name = name;
         this.email = email;
@@ -30,14 +36,14 @@ public class User {
         this.age = age;
         this.driveLicense = driveLicense;
     }
-
+    // constructor
     public User(String work, String eduction, String qualifications, String language) {
         this.work = work;
         this.eduction = eduction;
         this.qualifications = qualifications;
         this.language = language;
     }
-
+    // constructor
     public User(String name, String email, String hobbies, String gender, String age, String work, String eduction, String qualifications, String language, String driveLicense) {
         this.name = name;
         this.email = email;
@@ -50,7 +56,7 @@ public class User {
         this.language = language;
         this.driveLicense = driveLicense;
     }
-
+    // constructor
     public User(String name, String email, String hobbies, String gender, String age, String work, String eduction, String qualifications, String language, String driveLicense, String eductionType) {
         this.name = name;
         this.email = email;
@@ -64,6 +70,10 @@ public class User {
         this.driveLicense = driveLicense;
         this.eductionType = eductionType;
     }
+
+
+
+
 
     public String getEductionType() {
         return eductionType;
@@ -79,11 +89,6 @@ public class User {
 
     public void setDriveLicense(String driveLicense) {
         this.driveLicense = driveLicense;
-    }
-
-
-
-    public User() {
     }
 
 

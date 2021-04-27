@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.example.cv_app.R;
 import com.example.cv_app.model.User;
-
+/*
+this fragment use to show user data
+ */
 
 public class CV_ViewFragment extends Fragment {
 
