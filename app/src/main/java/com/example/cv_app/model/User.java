@@ -11,6 +11,7 @@ public class User {
     private String qualifications;
     private String language;
     private String driveLicense;
+    private String eductionType;
 
     public User(String name, String email, String hobbies, String gender, String age) {
         this.name = name;
@@ -48,6 +49,28 @@ public class User {
         this.qualifications = qualifications;
         this.language = language;
         this.driveLicense = driveLicense;
+    }
+
+    public User(String name, String email, String hobbies, String gender, String age, String work, String eduction, String qualifications, String language, String driveLicense, String eductionType) {
+        this.name = name;
+        this.email = email;
+        this.hobbies = hobbies;
+        this.gender = gender;
+        this.age = age;
+        this.work = work;
+        this.eduction = eduction;
+        this.qualifications = qualifications;
+        this.language = language;
+        this.driveLicense = driveLicense;
+        this.eductionType = eductionType;
+    }
+
+    public String getEductionType() {
+        return eductionType;
+    }
+
+    public void setEductionType(String eductionType) {
+        this.eductionType = eductionType;
     }
 
     public String getDriveLicense() {

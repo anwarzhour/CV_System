@@ -23,17 +23,18 @@ import java.util.ArrayList;
 public class UserInfoActivity extends AppCompatActivity {
 
     private Button nextButton;
-    private EditText mName, mEmail, mHobbies;
-    private Spinner mGender,mAge, mDriveLicense ;
+    private EditText mName, mEmail;
+    private Spinner mGender,mAge, mDriveLicense, mHobbies ;
 
     ArrayList<String> genderList;
     ArrayList<String> ageList;
     ArrayList<String> driveList;
+    ArrayList<String> hobbiesList;
 
     ArrayAdapter<String> arrayAdapterGender;
     ArrayAdapter<String> arrayAdapterAge;
     ArrayAdapter<String> arrayAdapterDriveLicense;
-
+    ArrayAdapter<String> arrayAdapterHobbies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class UserInfoActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButtonId);
         mName = findViewById(R.id.editTextNameId);
         mEmail = findViewById(R.id.editTextEmailId);
-        mHobbies = findViewById(R.id.editTextHobbiesId);
+        mHobbies = findViewById(R.id.hobbiesId);
         mGender = findViewById(R.id.editGenderId);
         mAge = findViewById(R.id.editAgeId);
         mDriveLicense = findViewById(R.id.driveId);
@@ -57,6 +58,22 @@ public class UserInfoActivity extends AppCompatActivity {
         arrayAdapterDriveLicense = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,driveList);
         arrayAdapterDriveLicense.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mDriveLicense.setAdapter(arrayAdapterDriveLicense);
+
+
+        hobbiesList = new ArrayList<>();
+        hobbiesList.add("Gaming");
+        hobbiesList.add("Travel");
+        hobbiesList.add("Art");
+        hobbiesList.add("Nature");
+        hobbiesList.add("Social");
+        hobbiesList.add("History");
+
+
+
+        arrayAdapterHobbies = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,hobbiesList);
+        arrayAdapterHobbies.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mHobbies.setAdapter(arrayAdapterHobbies);
+
 
 
 
@@ -92,6 +109,23 @@ public class UserInfoActivity extends AppCompatActivity {
 
 
         User user = new User();
+
+        mHobbies.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectHobbies= parent.getItemAtPosition(position).toString();
+                user.setHobbies(selectHobbies);
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
 
         mGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -135,7 +169,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 Intent intent = new Intent(UserInfoActivity.this, MoreInfoActivity.class);
                 intent.putExtra("name", mName.getText().toString());
                 intent.putExtra("email",mEmail.getText().toString());
-                intent.putExtra("hobbies", mHobbies.getText().toString());
+                intent.putExtra("hobbies", user.getHobbies());
                 intent.putExtra("drive",user.getDriveLicense());
                 intent.putExtra("age",user.getAge());
                 intent.putExtra("gender",user.getGender());

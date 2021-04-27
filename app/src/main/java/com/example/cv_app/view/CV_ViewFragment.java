@@ -28,8 +28,9 @@ public class CV_ViewFragment extends Fragment {
     private static final String KEY_QUALIFICATIONS="qualifications" ;
     private static final String KEY_LANGUAGE = "language";
     private static final String KEY_DRIVE ="drive";
+    private static final String KEY_EDUCTION_TYPE = "educationType";
 
-    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage, mDriveLicense;
+    private TextView mName, mEmail, mHobbies, mGender, mAge, mWork, mEduction, mQualifications, mLanguage, mDriveLicense, mEductionType;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +48,7 @@ public class CV_ViewFragment extends Fragment {
         mQualifications = view.findViewById(R.id.viewTextQualificationsId);
         mLanguage = view.findViewById(R.id.viewTextLanguageId);
         mDriveLicense = view.findViewById(R.id.viewTextDriveId);
+        mEductionType = view.findViewById(R.id.viewTextEductionTypeId);
 
         sharedPreferences = getActivity().getSharedPreferences(Shared_PREF_NAME,getActivity().MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME, null);
@@ -59,9 +61,10 @@ public class CV_ViewFragment extends Fragment {
         String qualifications = sharedPreferences.getString(KEY_QUALIFICATIONS, null);
         String language = sharedPreferences.getString(KEY_LANGUAGE,null);
         String drive = sharedPreferences.getString(KEY_DRIVE,null);
+        String educationType = sharedPreferences.getString(KEY_EDUCTION_TYPE,null);
 
 
-        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language,drive);
+        User user = new User(name,email,hobbies,gender,age,work,education,qualifications,language,drive,educationType);
 
 
 
@@ -76,6 +79,7 @@ public class CV_ViewFragment extends Fragment {
             mQualifications.setText(user.getQualifications());
             mLanguage.setText(user.getLanguage());
             mDriveLicense.setText(user.getDriveLicense());
+            mEductionType.setText(user.getEductionType());
         }
 
         return view;

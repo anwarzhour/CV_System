@@ -61,15 +61,22 @@
         android:paddingStart="10dp"
         android:hint="Email" />
 
-    <EditText
-        android:id="@+id/editTextHobbiesId"
+
+    <TextView
+        android:id="@+id/hobbiesTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:layout_margin="10dp"
-        android:paddingStart="10dp"
-        android:hint="Hobbies" />
+        android:paddingStart="5dp"
+        android:text="Hobbies"
+        android:textStyle="bold"
+        android:textSize="18dp" />
 
+     <Spinner
+         android:id="@+id/hobbiesId"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp"/>
 
     <TextView
         android:id="@+id/genderTitle"

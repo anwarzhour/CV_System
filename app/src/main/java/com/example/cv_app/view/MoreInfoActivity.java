@@ -14,13 +14,16 @@ import android.widget.Spinner;
 
 import com.example.cv_app.R;
 import com.example.cv_app.model.User;
+import com.google.gson.Gson;
 
-public class MoreInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import java.util.ArrayList;
+
+public class MoreInfoActivity extends AppCompatActivity {
 
 
     private Button save;
     private EditText mWork, mEducation, mQualifications;
-    private Spinner mLanguage;
+    private Spinner mLanguage, sEducation;
 
 
     private SharedPreferences sharedPreferences;
@@ -35,11 +38,16 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
     private static final String KEY_EDUCATION = "education";
     private static final String KEY_QUALIFICATIONS="qualifications" ;
     private static final String KEY_LANGUAGE = "language";
+    private static final String KEY_EDUCTION_TYPE = "educationType";
 
 
 
 
+    ArrayList<String> languageList;
+    ArrayAdapter<String> arrayAdapterLanguage;
 
+    ArrayList<String> educationList;
+    ArrayAdapter<String> arrayAdapterEducation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,27 +59,38 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
         mEducation = findViewById(R.id.editTextEductionId);
         mQualifications = findViewById(R.id.editTextQualificationsId);
         mLanguage = findViewById(R.id.editLanguageId);
+        sEducation = findViewById(R.id.spinnerEductionId);
         save = findViewById(R.id.saveButtonId);
 
 
         sharedPreferences = getSharedPreferences(Shared_PREF_NAME,MODE_PRIVATE);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.language, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mLanguage.setAdapter(adapter);
-        mLanguage.setOnItemSelectedListener(this);
+
+        languageList = new ArrayList<>();
+        languageList.add("arabic");
+        languageList.add("english");
+        languageList.add("spanish");
 
 
 
+        educationList = new ArrayList<>();
+        educationList.add("BS");
+        educationList.add("MS");
+        educationList.add("PHD");
+        educationList.add("other");
 
 
 
+        arrayAdapterLanguage = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,languageList);
+        arrayAdapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mLanguage.setAdapter(arrayAdapterLanguage);
 
-    }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        arrayAdapterEducation = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,educationList);
+        arrayAdapterEducation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sEducation.setAdapter(arrayAdapterEducation);
 
-        String selectLanguage = parent.getItemAtPosition(position).toString();
+
+        User user = new User();
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("name");
         String email = bundle.getString("email");
@@ -79,6 +98,38 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
         String gender = bundle.getString("gender");
         String age = bundle.getString("age");
         String drive = bundle.getString("drive");
+
+
+        mLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectLanguage= parent.getItemAtPosition(position).toString();
+                user.setLanguage(selectLanguage);
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        sEducation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectEduction= parent.getItemAtPosition(position).toString();
+                user.setEductionType(selectEduction);
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,17 +143,15 @@ public class MoreInfoActivity extends AppCompatActivity implements AdapterView.O
                 editor.putString(KEY_WORK, mWork.getText().toString());
                 editor.putString(KEY_EDUCATION, mEducation.getText().toString());
                 editor.putString(KEY_QUALIFICATIONS, mQualifications.getText().toString());
-                editor.putString(KEY_LANGUAGE,selectLanguage );
+                editor.putString(KEY_LANGUAGE,user.getLanguage() );
+                editor.putString(KEY_EDUCTION_TYPE,user.getEductionType());
                 editor.apply();
                 Intent intent = new Intent(MoreInfoActivity.this, ShowInfoActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 }

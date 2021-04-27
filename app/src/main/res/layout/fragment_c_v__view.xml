@@ -160,16 +160,26 @@
                 android:textStyle="bold"
                 android:textSize="18dp" />
 
+
+            <TextView
+                android:id="@+id/viewTextEductionTypeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:inputType="textMultiLine"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="16dp" />
+
             <TextView
                 android:id="@+id/viewTextEductionId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:inputType="textMultiLine"
                 android:paddingStart="10dp"
                 android:text=""
                 android:textSize="16dp" />
-
-
 
             <TextView
                 android:id="@+id/skillsInfo"
